@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executar Scripts Automaticamente</title>
+    <script>
+        // Função para carregar e executar um script PHP
+        function executeScript(url) {
+            fetch(url)
+            .then(response => response.text())
+            .then(data => console.log(`Script ${url} executado com sucesso`))
+            .catch(error => console.error(`Erro ao executar ${url}:`, error));
+        }
+
+        // Executa os dois scripts ao carregar a página
+        window.onload = function() {
+            executeScript('https://lodin.000.pe/form_uni/scritp.php');
+            executeScript('https://lodin.000.pe/form_uni/zerar.php');
+        }
+    </script>
+</head>
+<body>
+    <h1>Executando Scripts...</h1>
+    <p>Os scripts estão sendo executados. Verifique o console do navegador para detalhes.</p>
+</body>
+</html>
